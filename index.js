@@ -45,6 +45,18 @@ class SLL {
     front() {
         return this.head ? this.head.value : null;
     }
+
+    display() {
+        let current = this.head;
+        let printString = "";
+
+        while (current.next) {
+            printString += `${String(current.value)}, `;
+            current = current.next;
+        }
+        printString += `${current.value}`;
+        return printString;
+    }
 }
 
 class Node {
@@ -60,5 +72,4 @@ List.addFront(13);
 List.addFront(27);
 List.addFront(69);
 
-console.log(List);
-console.log(List.front());
+console.log(List.display());
